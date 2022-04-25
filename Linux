@@ -157,6 +157,39 @@ sudo apt purge sl
   {n}: 直前の項目がn回マッチする
   etc...
   
+{{パイプ}} |
+  シェルコマンドを組みあわせるための機能
+  ls -l example | grep -n "txt"
+  dpkg -l | grep -n "python" | less のように二個組み合わせることもできる。
+  
+{{プロセスps}}
+  実行中のプログラムをpsで表示できる
+  ps: 自分のみ
+  ps aux: 自分以外も含む
+  ps aux | grep "
+  
+  
+  {{bash}}
+  シェル: Unix互換OSのカーネルとユーザーとの仲立ち
+  -プログラムの起動、切り替え、停止
+  -ファイル操作
+  -コマンドの入力履歴や補完
+  -シェルコマンドの一括実行
+  
+ alias: コマンドの別名を表示
+ コマンドの別名を登録する方法
+  alias hello='echo="hello world"' (登録)
+  alias (確認コマンド)
+  
+  別名を解除するには、unalias hello などunaliasコマンドを活用する。
+  
+  PS
+    echo $PS1 : プロンプトの設定を確認する。$が必要。
+    プロンプトの設定を変更する
+    Linuxの標準シェルであるbashでは、PS1という環境変数によってプロンプトを定義している。従って、exportコマンドでPS1を変更すればいい。
+    よって
+     export PS1="[\u@\h \w]\$"
+     
   
   
   
