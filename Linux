@@ -96,6 +96,34 @@ Linuxのユーザーインターフェース
   GUI (Graphical User Interface)
   
   
-  
-  
+{{パッケージ管理ツール}}
+パッケージ
+-ソフトウェア本体に、関連ライブラリや設定ファイルをまとめたものetc...
+-形式　RPM: Red HatやCent OS
+       deb: Debian GNU/LinuxやUbuntu
+
+<$ dpkg -l> インストール済みあプrケーションを一覧表示
+<dpkg -l l less>で1ページずつ表示
+
+slコマンド
+・slコマンドをインストール
+sudo apt update
+sudo apt install sl
+・slコマンドを実行
+sl
+・slコマンドをアンインストール
+sudo apt purge sl
+
+
+
+
+
+
+
+
+
+
+
+
+
   
