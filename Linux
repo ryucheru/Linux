@@ -5,7 +5,7 @@
 ⇒hello world
 
 <pwd> print working directory
-現在のディレクトリの場所を確認する、カレントディレクトリ
+現在のディレクトリの場所を確認する、カレントディレクトリ(.)
 ⇒home/ubuntu
 
 ~$ history
@@ -14,7 +14,7 @@
 ~$　ls: ファイルやディレクトリの情報を表示する。
 <ls> すべてのファイルを表示
 <ls  -a> 隠しファイルも含めてすべて表示
-<ls -l>ファイルの詳細情報を表示する
+<ls -l>ファイルの詳細情報を表示する。また、<ls -l　ディレクトリ名>でディレクトリ内のファイルを表示。
 <ls -al>のように組み合わせることも可能
 
 ファイルを作成する
@@ -27,7 +27,48 @@ echo "hello world" > foo.txt
 <cp A.txt B.txt> cpがコピーコマンド。AをBというファイル名でコピーする。
 <mv A.txt B.txt> mvがファイルやディレクトリ名前変更コマンド、リネーム。AをBというファイル名に変更する。
 <rm A.txt> rmがファイルやディレクトリを削除するコマンド。remove. 完全削除となるので注意。
-<mkdir test> make directory。 testという名前のディレクトリを作る。
+
+<mkdir Directo> make directory。 Directoという名前のディレクトリを作る。
+<cp A.txt Directo> DirectoというディレクトリにA.txtというファイルをそのままコピー。
+<cp A.txt Directo/BB.txt> DirectoというディレクトリにA.txtというファイルをBB.txtという名前に変更してコピー。
+
+<cd Directo>
+⇒~/Directo$ チェンジディレクトリ。ディレクトリの移動。カレントディレクトリの移動。
+
+上位ディレクトリの表示
+.. 一つ上位のディレクトリ
+../.. 二つ上位のディレクトリ
+⇒<ls al ..> 一つ上位のディレクトリのファイル一覧を表示する。
+⇒<cd ..> 一つ上位のディレクトリに移動する。
+
+ファイルツリー
+ツリーの最上位はルート(根本)という。
+ツリーの最上位はルートディレクトリという。
+ファイルパスはファイルツリーにおいて各ディレクトリやファイルの位置をテキストで記述したもの。
+ディレクトリ: /home/ubuntu
+ファイル: /home/ubuntu/A.txt
+絶対パス: ルートディレクトリを起点に記述
+相対パス: カレントディレクトリを起点に記述
+
+
+[プログラム]
+プログラムファイルを作成
+<echo "puts 'Hello Ruby'" > code/test.rb>
+プログラムファイルの実行
+・Rubyの場合
+<ruby code/test.rb>
+⇒Hello Ruby
+・Pythonの場合
+<python code/hello.py>　など
+
+これはcd(チェンジディレクトリ)してからだと
+<python hello.py> のみで済む
+中身を見たいときは、<cat hello.py>
+
+[出力のリダイレクト]
+ls -al > list.txt
+
+
 
 
 
