@@ -19,7 +19,7 @@
 
 ファイルを作成する
 echo "hello world" > foo.txt
-/home/ubuntu/foo.txtとなる
+/home/ubuntu/foo.txtとなる。コマンドの出力をファイルに保存することができる。
 
 <cat foo.txt> hello worldと表示される
 ファイルを連結して標準出力に出力する
@@ -53,21 +53,21 @@ echo "hello world" > foo.txt
 
 [プログラム]
 プログラムファイルを作成
-<echo "puts 'Hello Ruby'" > code/test.rb>
+echo "puts 'Hello Ruby'" > code/test.rb
 プログラムファイルの実行
 ・Rubyの場合
-<ruby code/test.rb>
+ruby code/test.rb
 ⇒Hello Ruby
 ・Pythonの場合
-<python code/hello.py>　など
+python code/hello.py　など
 
 これはcd(チェンジディレクトリ)してからだと
-<python hello.py> のみで済む
-中身を見たいときは、<cat hello.py>
+python hello.py のみで済む
+中身を見たいときは、cat hello.py
 
 [出力のリダイレクト]
 ls -al > list.txt
-
+コマンドの出力をファイルに保存することができる。
 
 
 
@@ -102,8 +102,9 @@ Linuxのユーザーインターフェース
 -形式　RPM: Red HatやCent OS
        deb: Debian GNU/LinuxやUbuntu
 
-<$ dpkg -l> インストール済みあプrケーションを一覧表示
-<dpkg -l l less>で1ページずつ表示
+$ dpkg -l インストール済みアプリケーションを一覧表示
+dpkg -l | less: lessコマンド。1ページずつ表示
+スペースキーで次のページ、Qを入力すると終了。
 
 slコマンド
 ・slコマンドをインストール
@@ -113,6 +114,11 @@ sudo apt install sl
 sl
 ・slコマンドをアンインストール
 sudo apt purge sl
+
+シェルコマンド
+・コマンドはできるだけひとつのことをうまくやる
+・コマンドを組わせて利用する
+・標準入出力を経由してテキストデータをやり取り
 
 
 
