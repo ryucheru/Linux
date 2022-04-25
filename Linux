@@ -122,9 +122,44 @@ sudo apt purge sl
 
 
 
+{{シェル環境}}
+ find: ファイル検索コマンド、名前や更新時期などをもとにファイルやディレクトリを検索できる。
+  find (検索を開始するパス) (検索パターン)
+   例: find example
+       find example/*.txt(サブディレクトリは検索しない)
+       find example -name "*.txt"(サブディレクトリも検索)
+       find example -name "*.txt" -mtime 0 (0:1日以内に更新されたデータ)(
+       find example -name "*.txt" > output.txt (サブディレクトリまで探したうえで出力結果をoutput.txtというファイルに保存する。
+        ここで*(アスタリスク)はワイルドカードといい、複数の文字に合致する特殊文字。
 
-
-
+ grep: ファイルの中のテキストを正規表現で検索する。
+  grep (検索パターン) (検索ターゲット)
+   例: grep "AA" example/alice.md (example/alice.md内のAAという文字列を検索
+       grep "hello" example/*.txt
+       grep -r "hello" example (rオプション、すべてのファイルを対象にサブディレクトリまで検索する)
+       grep -rl "hello" example (helloという言葉がついたファイル名だけを表示する)
+       grep -rl "hello" example (行番号を表示する)
+       
+正規表現
+  テキストのパターンを記述するルール
+  いくつかの記号で表す　(メタ文字　・*[]{}()+¥^$)
+  EX:) 日本の郵便番号⇒　(〒)[0-9]{3}-[0-9]{4}
+  grep -n "hello." example/test.txt (改行以外の任意の文字)
+  grep -n "hello[0-9]" example/test.tx
+  grep -n "hello_." example/test.txなど
+  ^paiza⇒hellopaiza
+  paiza$⇒
+  grep -E "(hello|paiza)" example/test.txt : OR検索
+  直前の項目の繰り返し回数を指定
+  *: 直前の項目が0回以上マッチする。
+  ?: 直前の項目が0回か1回マッチする
+  +直前の項目が1回以上マッチする。
+  {n}: 直前の項目がn回マッチする
+  etc...
+  
+  
+  
+  
 
 
 
